@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loop</title>
+</head>
+<body>
+ 
+ <p id="text"></p>   
+<script type="text/javascript">
+
+
+var tweets =["Hi Everyone!","I love hotcakes","good night","I love dogs"];
+var text = "";
+for ( var i= 0; i < tweets.length; i++){
+    
+    text =  text + tweets[i] +"<br>"; // es un string + el valor del array + un salto
+
+}
+
+
+document.getElementById("text").innerHTML = text;
+
+//for (var i = 5; i>0 ; i= i-1){
+
+    //console.log(i);
+// i++ es lo mismo que i= i+1  
+
+
+
+</script>
+
+
+</body>
+</html>

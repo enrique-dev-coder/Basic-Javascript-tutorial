@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing website</title>
+</head>
+<body>
+ 
+    <p id="text">Hello World!</p>
+
+    <button id="firstbutton">Change text</button>
+
+    <p id="text2">Javascript is ....</p>
+
+    <button id="secondbutton">Change text 2</button>
+    <br>
+    <br>
+    <button id="thirdbutton">Append text</button>
+
+    <button id="fourthbutton">Appear text</button>
+    <br>
+    <P id="empty"></P>
+    <br>
+    <button id="quintoBoton">Appear text 2</button>
+
+    <p id="style">Text with style</p>
+
+    <button id="sextoboton">Change style</button>
+
+
+    <script type="text/javascript">
+    
+    document.getElementById("firstbutton").onclick=function(){
+
+     document.getElementById('text').innerHTML= "Hello Tite";
+
+    }
+    
+    document.getElementById('secondbutton').onclick=function(){
+
+        document.getElementById('text2').innerHTML="Hello Tite x2";
+    }
+    
+    document.getElementById('thirdbutton').onclick=function(){
+
+         document.getElementById("text2").innerHTML= "I think "+  document.getElementById("text2").innerHTML + "awesome";
+
+    }
+    // crear un nuevo parrafo sin hacer un empty ID  
+    document.getElementById('fourthbutton').onclick=function(){
+        var newP= document.createElement("p"); // crear un nuevo parrafo
+        var newPcontent= document.createTextNode("Este es un nuevo parrafo"); // contenido del parraf
+        newP.appendChild(newPcontent); // agregar texto al parrafo
+
+        var currentButton= document.getElementById("fourth button"); //porque si le pongo un espacio al ID me deja el boton en el mismo lugar
+        document.body.insertBefore(newP,currentButton);
+    }
+
+
+    document.getElementById('quintoBoton').onclick=function(){
+        document.getElementById("empty").innerHTML= "Otro ejemplo" ;
+    }
+
+    let botonStyle = document.getElementById('sextoboton');
+    let parrafoStyle = document.getElementById('style');
+
+    botonStyle.onclick=function(){
+
+        //parrafoStyle.style.color = "red";  se podra en un boton dos comandos? 
+        parrafoStyle.style.fontSize = "50px";
+
+    }
+
+    
+
+    </script>
+    
+
+
+</body>
+</html>

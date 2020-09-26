@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If statements</title>
+</head>
+<body>
+    
+    <h1>Write your magicword to enter</h1>
+
+    <input type="text" placeholder="magicword" id="password"> <button id="boton">Enter</button>
+
+    
+
+    <script type="text/javascript" >
+    
+ 
+    var boton = document.getElementById("boton");
+
+
+    boton.onclick = function(){
+
+
+        let password = document.getElementById('password').value;
+        var passwordEntered= "hola";
+
+        if (password == passwordEntered) {
+
+            alert ("Right");
+        } else {
+
+            alert ( "this is not the magic word");
+        }
+
+
+    }
+
+
+
+   
+    
+    </script>
+
+
+
+</body>
+</html>

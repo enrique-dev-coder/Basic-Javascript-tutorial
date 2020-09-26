@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Tester</title>
+    <style>
+
+        #shape{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: none;
+            position: relative;
+        }
+
+        .body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #result{
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+
+
+
+<body class="body">
+
+    <h1>Test your reactions!!</h1>
+    <p>picale a los circulos o cuadrados xd</p>
+    
+    <p id="text">Your click time is: <span id="result"></span> </p>
+    <div id="shape" > 
+    </div>
+
+
+
+    <script type="text/javascript">
+        // new Date() siempre se sua para trabjar asi
+
+        var start = new Date().getTime();
+
+        function getRandomColor() { //el split es para convertir las letras en array
+        var letters = '0123456789ABCDEF'.split(''); // esta variable almacena los posibles letras de colores
+        var color = '#'; // es para agregarle el #
+        for (var i = 0; i < 6; i++) { //es para generar 
+            color += letters[Math.floor(Math.random() * 16)]
+
+        }
+        return color;
+        }   
+
+    
+        function makeShapeAppear(){
+            var topPosition = Math.random()*400;
+            var leftPosition = Math.random()*400;
+            var widthSize = (Math.random()*200)+100;
+            var heightSize = Math.random()*400;
+
+            if (Math.random()>.5){ // si el numero es mayor que 5 coviertelo a circulo
+                document.getElementById("shape").style.borderRadius ="50%";
+            } else {
+
+                document.getElementById("shape").style.borderRadius = "0";
+            }
+
+            document.getElementById("shape").style.backgroundColor = getRandomColor();
+            document.getElementById("shape").style.width= widthSize +"px"; // LA IDEA AQUI ES QUE SOLO SEAN CUADRADOS POR ESO  LA ALTURA Y ANCHURA SON IGUALES
+            document.getElementById("shape").style.height= widthSize +"px"; //
+            document.getElementById("shape").style.top  = topPosition +"px"; //el px es para que el html lo agarre
+            document.getElementById("shape").style.left  = leftPosition +"px"; //el px es para que el html lo agarre
+            document.getElementById("shape").style.display="block";
+            start = new Date().getTime(); // se pone aqui adentro para contar cada figura sola
+        }
+        
+        function appearAfterDelay(){ //funcion para que vuelva  a aparecer
+        setTimeout(makeShapeAppear,Math.random()*2000); // le pusimos none arriba para que no estuviera desde el principio
+        }
+
+        appearAfterDelay();
+
+        document.getElementById('shape').onclick = function(){
+
+            document.getElementById('shape').style.display = "none";
+            var end = new Date().getTime();
+
+            var timer= (end - start)/1000 ; //para convertirlo a segundos   
+            
+            document.getElementById('result').innerHTML= timer + "s";  // de esat forma el programa lo que hace es  sustituir el resultados
+            appearAfterDelay();
+        }
+  
+
+    </script>
+
+
+
+</body>
+</html>

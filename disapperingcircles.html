@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dissapering circles</title>
+
+    <style>
+
+        .redcircle{
+
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-radius: 50%; /*esto es lo que crea al circulo*/
+
+
+        }
+         
+        .bluecircle{
+
+            background-color: royalblue;
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-radius: 50%; /*esto es lo que crea al circulo*/
+
+        }
+
+        .greencircle{
+
+            background-color: seagreen;
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-radius: 50%; /*esto es lo que crea al circulo*/
+
+
+        }
+
+    </style>
+
+</head>
+
+<div class="redcircle" id="rc"></div>
+<br>
+<div class="bluecircle" id="bc"></div>
+<br>
+<div class="greencircle" id="gc"></div>
+<br>
+<button id="boton">Click to disappear circles!</button>
+
+<script>
+
+    let redCircle = document.getElementById("rc");
+    let blueCircle = document.getElementById('bc');
+    let greenCircle = document.getElementById('gc');
+    let boton = document.getElementById('boton');
+
+   /* boton.onclick= function(){
+
+        redCircle.style.display = "none";
+        blueCircle.style.display="none";
+        greenCircle.style.display="none"; 
+    } */
+
+   // otro metodo sin boton solo dando click al circulo
+
+   redCircle.onclick = function(){
+       redCircle.style.display= "none";
+   }
+
+   blueCircle.onclick = function(){
+       blueCircle.style.display = "none";
+   }
+
+   greenCircle.onclick = function(){
+       greenCircle.style.display = "none";
+   }
+
+</script>
+
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How many fingers?</title>
+</head>
+<body>
+
+<h1>How many fingers am I holding?</h1>
+
+<input type="text" id="number"> <button id="boton">Guess!</button>
+
+<script type>
+
+    // la idea del juego es que el usuario adivine  un numero del 1 al 5
+
+   
+    // math . random saca decimales del 0  al 0.49999 con floor aga
+
+    let boton = document.getElementById('boton');
+
+    boton.onclick = function(){
+
+        // par aque funcione tienes  que poner las variables adentro de la funcion
+
+        let randomNumber = Math.floor(Math.random() * 5) + 1; // para ver si funciona ponle un valor fijo 
+        var numberEntered = document.getElementById('number').value;
+
+        if (randomNumber == numberEntered){
+            alert ("You got it!");
+        } else {
+
+            alert ("Try again :( the number was "+ randomNumber);
+        }
+
+
+
+    }
+
+
+
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funcion flecha</title>
+
+    <script>
+        // un metodo
+        setTimeout(function(){
+            console.log('Primera funcion');
+        },10000)
+
+        setTimeout(function(){
+            console.log('Segunda funcion');
+        },3000)
+
+        setTimeout(function(){
+            console.log('Tercera funcion');
+        },6000)
+        
+        //aqui no se llama la funcion
+
+        //otro metodo
+        const myCallbackFirst= function(){
+            console.log('cuarta funcion')
+        }
+
+        const myCallbackSecond= function(){
+            console.log('quinta funcion')
+        }
+
+        const myCallbackThird= function(){
+            console.log('sexta funcion')
+        }
+
+        // haces una funcion adentro de una variable y la variable la mandas llamar con el setTimeout
+
+        setTimeout(myCallbackFirst,12000);
+        setTimeout(myCallbackSecond,14000);
+        setTimeout(myCallbackThird,16000);
+
+        async function regresarSaludo() 
+        {
+       
+         return "Me gusta JS";
+        }
+        async function otraFuncion() 
+            {
+                let saludo = await regresarSaludo();
+                // Este código no se ejecuta hasta que la promesa
+                // de arriba se resuelve ;)
+                console.log("El saludo es: ", saludo);
+            }
+
+         otraFuncion();
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    
+<h1>ejemplo de funciones</h1>
+
+
+</body>
+</html>
